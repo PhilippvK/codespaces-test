@@ -1,10 +1,11 @@
 {
 	"name": "XFCE",
   "image": "x11docker/xfce",
-  //"runArgs": [
-  //    "-e", "DISPLAY=host.docker.internal:0",
-  //    "-e", "SHELL=/bin/bash"
-  //]
+  "runArgs": [
+			"-v", "/tmp/.X11-unix:/tmp/.X11-unix",
+      "-e", "DISPLAY=host.docker.internal:0",
+      "-e", "SHELL=/bin/bash"
+  ]
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
