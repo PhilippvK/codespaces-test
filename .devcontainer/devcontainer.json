@@ -2,8 +2,8 @@
 	"name": "XFCE",
   "image": "x11docker/xfce",
   "runArgs": [
-			"-v", "/tmp/.X11-unix:/tmp/.X11-unix",
-      "-e", "DISPLAY=host.docker.internal:0",
+			"-v", "/tmp/.X11-unix:/tmp/.X11-unix:rw",
+      "-e", "DISPLAY=host.docker.internal:0.0",
       "-e", "SHELL=/bin/bash"
   ],
 
@@ -13,10 +13,12 @@
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": []
+	"extensions": [],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [
+		"8282"
+	]
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	//"postCreateCommand": "apt-get update && apt-get install -y x11-apps"
